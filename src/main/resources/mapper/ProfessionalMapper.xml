@@ -1,0 +1,28 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.edu.mapper.ProfessionalMapper">
+
+	<select id="findAll" resultType="com.example.edu.entity.Professional">
+		select id, name from professional
+	</select>
+
+	<insert id="save" parameterType="com.example.edu.mapper.ProfessionalMapper">
+		insert into professional value (#{id}, #{name})
+	</insert>
+
+	<update id="update" parameterType="com.example.edu.entity.Professional">
+		update professional set name=#{name} where id=#{id}
+	</update>
+
+	<select id="findProfessionalById" parameterType="java.lang.String" resultType="com.example.edu.entity.Professional">
+		select * from professional where id=#{id}
+	</select>
+
+	<delete id="delete" parameterType="java.lang.String">
+		delete from professional where id=#{id}
+	</delete>
+
+
+</mapper>

@@ -4,6 +4,10 @@
 
 <mapper namespace="com.example.edu.mapper.TeacherMapper">
 
+    <update id="modifyUserInfo" parameterType="com.example.edu.entity.Teacher">
+        update teacher set name=#{name}, password=#{password}, sex=#{sex}, avatar=#{avatar} where id=#{id}
+    </update>
+
     <select id="findTeacherByAccountAndPassword" parameterType="java.lang.String" resultType="com.example.edu.entity.Teacher">
         select * from teacher where name=#{param1} and password=#{param2}
     </select>

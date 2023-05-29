@@ -10,10 +10,15 @@ import org.springframework.stereotype.Service;
 public class TeacherServiceImpl implements TeacherService {
 
     @Autowired
-    private TeacherMapper teacherMapper;
+    private TeacherMapper mapper;
+
+    @Override
+    public Integer modifyUserInfo(Teacher teacher) {
+        return mapper.modifyUserInfo(teacher);
+    }
 
     @Override
     public Teacher findTeacherByAccountAndPassword(String name, String password) {
-        return teacherMapper.findTeacherByAccountAndPassword(name, password);
+        return mapper.findTeacherByAccountAndPassword(name, password);
     }
 }

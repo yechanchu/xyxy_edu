@@ -53,10 +53,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <!-- Header logo -->
-<%--                        <a class="navbar-brand" href="javascript:void(0)">--%>
-<%--                            <img class="img-responsive" src="${pageContext.request.contextPath}/assets/img/logo/logo-frontend.png" title="AppUI" alt="AppUI" />--%>
-<%--                        </a>--%>
                     </div>
 
                     <div class="collapse navbar-collapse" id="header-navbar-collapse">
@@ -72,54 +68,6 @@
                             </div>
                         </form>
 
-                        <!-- Header navigation menu -->
-<%--                        <ul id="main-menu" class="nav navbar-nav navbar-left">--%>
-
-<%--                            <li>--%>
-<%--                                <a href="frontend_home.html">Home</a>--%>
-<%--                            </li>--%>
-
-<%--                            <li>--%>
-<%--                                <a href="frontend_about.html">About</a>--%>
-<%--                            </li>--%>
-
-<%--                            <li>--%>
-<%--                                <a href="frontend_pricing.html">Pricing</a>--%>
-<%--                            </li>--%>
-
-<%--                            <li>--%>
-<%--                                <a href="frontend_team.html">Team</a>--%>
-<%--                            </li>--%>
-
-<%--                            <li class="dropdown active">--%>
-<%--                                <a href="#" data-toggle="dropdown">Pages <span class="caret"></span></a>--%>
-<%--                                <ul class="dropdown-menu">--%>
-
-<%--                                    <li>--%>
-<%--                                        <a href="frontend_search.html">Search</a>--%>
-<%--                                    </li>--%>
-
-<%--                                    <li>--%>
-<%--                                        <a href="frontend_support.html">Support</a>--%>
-<%--                                    </li>--%>
-
-<%--                                    <li>--%>
-<%--                                        <a href="frontend_contact.html">Contact</a>--%>
-<%--                                    </li>--%>
-
-<%--                                    <li class="active">--%>
-<%--                                        <a href="frontend_login_signup.html">Login / Signup</a>--%>
-<%--                                    </li>--%>
-
-<%--                                    <li>--%>
-<%--                                        <a href="frontend_400.html">Error 400</a>--%>
-<%--                                    </li>--%>
-
-<%--                                </ul>--%>
-<%--                            </li>--%>
-
-<%--                        </ul>--%>
-                        <!-- End header navigation menu -->
                     </div>
                 </div>
                 <!-- .container -->
@@ -180,51 +128,6 @@
                             <!-- .card -->
                         </div>
                         <!-- .col-md-6 -->
-                        <!-- End login -->
-
-                        <!-- Sign up -->
-<%--                        <div class="col-md-6">--%>
-<%--                            <div class="card">--%>
-<%--                                <h3 class="card-header h4">登录</h3>--%>
-<%--                                <div class="card-block">--%>
-<%--                                    <form class="form-horizontal" action="index.html" method="post">--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <div class="col-sm-6">--%>
-<%--                                                <label class="sr-only" for="frontend_signup_username">Username</label>--%>
-<%--                                                <input class="form-control" type="text" id="frontend_signup_username" placeholder="Username" />--%>
-<%--                                            </div>--%>
-<%--                                            <div class="col-sm-6">--%>
-<%--                                                <label class="sr-only" for="frontend_signup_email">Email</label>--%>
-<%--                                                <input class="form-control" type="email" id="frontend_signup_email" placeholder="Email" />--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <div class="col-sm-6">--%>
-<%--                                                <label class="sr-only" for="frontend_signup_password">Password</label>--%>
-<%--                                                <input class="form-control" type="password" id="frontend_signup_password" placeholder="Password" />--%>
-<%--                                            </div>--%>
-<%--                                            <div class="col-sm-6">--%>
-<%--                                                <label class="sr-only" for="frontend_signup_confirm_password">Confirm Password</label>--%>
-<%--                                                <input class="form-control" type="password" id="frontend_signup_confirm_password" placeholder="Confirm password" />--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="form-group">--%>
-<%--                                            <div class="col-xs-12">--%>
-<%--                                                <label for="frontend_signup_terms" class="css-input switch switch-sm switch-app">--%>
-<%--                                                    <input type="checkbox" id="frontend_signup_terms" name="frontend_signup_terms" /><span></span> I agree with <a data-toggle="modal" data-target="#modal-signup-terms" href="#">terms &amp; conditions</a>--%>
-<%--                                                </label>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <button class="btn btn-app btn-block" type="submit">登录</button>--%>
-<%--                                    </form>--%>
-<%--                                </div>--%>
-<%--                                <!-- .card-block -->--%>
-<%--                            </div>--%>
-<%--                            <!-- .card -->--%>
-<%--                        </div>--%>
-                        <!-- .col-md-6 -->
-                        <!-- End sign up -->
-
                     </div>
                     <!-- .row -->
                 </div>

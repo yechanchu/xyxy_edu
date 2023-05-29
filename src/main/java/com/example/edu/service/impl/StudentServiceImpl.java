@@ -13,6 +13,11 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper mapper;
 
     @Override
+    public Integer modifyUserInfo(Student student) {
+        return mapper.modifyUserInfo(student);
+    }
+
+    @Override
     public Student findStudentByAccountAndPassword(String name, String password) {
         Student student = mapper.findStudentByAccountAndPassword(name, password);
         return student;

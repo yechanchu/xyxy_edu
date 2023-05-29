@@ -1,6 +1,6 @@
 package com.example.edu.entity;
 
-public class Teacher {
+public class Teacher  {
 
     private String id;
     private String name;
