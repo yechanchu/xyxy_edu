@@ -61,7 +61,7 @@
                             <ul class="nav nav-subnav">
 
                                 <li>
-                                    <a href="base_ui_buttons.html">Buttons</a>
+                                    <a href="${pageContext.request.contextPath}/teacher/findAll" target="main">教师信息</a>
                                 </li>
 
                                 <li>
@@ -74,42 +74,6 @@
 
                                 <li>
                                     <a href="base_ui_layout.html">Layout</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_grid.html">Grid</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_icons.html">Icons</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_modals_tooltips.html">Modals / Tooltips</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_alerts_notify.html">Alerts / Notify</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_pagination.html">Pagination</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_progress.html">Progress</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_tabs.html">Tabs</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_typography.html">Typography</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_ui_widgets.html">Widgets</a>
                                 </li>
 
                             </ul>
@@ -127,18 +91,6 @@
                                     <a href="base_forms_samples.html">Samples</a>
                                 </li>
 
-                                <li>
-                                    <a href="base_forms_pickers_select.html">Pickers &amp; Select</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_forms_validation.html">Validation</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_forms_wizard.html">Wizard</a>
-                                </li>
-
                             </ul>
                         </li>
 
@@ -154,18 +106,6 @@
                                     <a href="base_tables_responsive.html">Responsive</a>
                                 </li>
 
-                                <li>
-                                    <a href="base_tables_tools.html">Tools</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_tables_pricing.html">Pricing</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_tables_datatables.html">Wizard</a>
-                                </li>
-
                             </ul>
                         </li>
 
@@ -174,23 +114,11 @@
                             <ul class="nav nav-subnav">
 
                                 <li>
-                                    <a href="base_pages_blank.html">Blank</a>
+                                    <a href="${pageContext.request.contextPath}/new/findAll" target="main">最新公告</a>
                                 </li>
 
                                 <li>
                                     <a href="base_pages_inbox.html">Inbox</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_pages_invoice.html">Invoice</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_pages_profile.html">Profile</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_pages_search.html">Search</a>
                                 </li>
 
                             </ul>
@@ -212,22 +140,6 @@
                                     <a href="base_js_charts_flot.html">Charts - Flot</a>
                                 </li>
 
-                                <li>
-                                    <a href="base_js_charts_chartjs.html">Charts - Chart.js</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_sparkline.html">Charts - Sparkline</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_draggable.html">Draggable</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_syntax_highlight.html">Syntax highlight</a>
-                                </li>
-
                             </ul>
                         </li><li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="ion-social-javascript-outline"></i> 学习天地</a>
@@ -243,22 +155,6 @@
 
                                 <li>
                                     <a href="base_js_charts_flot.html">Charts - Flot</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_chartjs.html">Charts - Chart.js</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_sparkline.html">Charts - Sparkline</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_draggable.html">Draggable</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_syntax_highlight.html">Syntax highlight</a>
                                 </li>
 
                             </ul>
@@ -285,26 +181,6 @@
 
                                 <li>
                                     <a href="base_js_sliders.html">Sliders</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_flot.html">Charts - Flot</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_chartjs.html">Charts - Chart.js</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_charts_sparkline.html">Charts - Sparkline</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_draggable.html">Draggable</a>
-                                </li>
-
-                                <li>
-                                    <a href="base_js_syntax_highlight.html">Syntax highlight</a>
                                 </li>
 
                             </ul>
@@ -420,7 +296,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">退出</button>
+<%--                        <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">退出</button>--%>
                         <button class="btn btn-sm btn-app" type="submit"><i class="ion-checkmark"></i> 确认</button>
                     </div>
                 </form>

@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.edu.mapper.NewMapper">
+
+	<delete id="del" parameterType="java.lang.String">
+		delete from news where id=#{id}
+	</delete>
+
+	<select id="update" parameterType="com.example.edu.entity.New">
+		update news set title=#{title}, keyword=#{keyword}, author=#{author}, content=#{content}, modify_time=#{modify_time}
+	</select>
+
+	<select id="findNewById" parameterType="java.lang.String" resultType="com.example.edu.entity.New">
+		select * from news where id=#{id}
+	</select>
+
+	<insert id="add" parameterType="com.example.edu.entity.New">
+		insert into news (id, title, keyword, author, content, create_time) values (#{id}, #{title}, #{keyword}, #{author}, #{content}, #{create_time})
+	</insert>
+
+	<select id="findAll" resultType="com.example.edu.entity.New">
+		select * from news order by create_time desc, modify_time desc
+	</select>
+
+</mapper>

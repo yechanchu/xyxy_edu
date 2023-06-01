@@ -44,7 +44,7 @@
         <!-- Condensed Table -->
         <div class="card">
             <div class="card-header">
-                <button class="btn btn-sm btn-info" type="button" data-toggle="modal" data-target="#modal-normal">新增</button>
+                <button class="btn btn-sm btn-info" type="button" id="add" data-toggle="modal" data-target="#modal-normal">新增</button>
             </div>
             <div class="card-block">
                 <table class="table table-condensed">
@@ -117,9 +117,10 @@
 
 <script type="text/javascript">
     $(function (){
-        $('#cancel').click(function (){
-            $('input').attr('value',"")
+        $('#add').click(function (){
+            $('input').val('')
         })
+        //数据回显
         $('button[name=edit]').click(function (){
             $('#modal-normal').modal('show');
             $.ajax({

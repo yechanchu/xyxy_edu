@@ -4,6 +4,14 @@
 
 <mapper namespace="com.example.edu.mapper.TeacherMapper">
 
+    <delete id="del" parameterType="java.lang.String">
+        delete from teacher where id=#{id}
+    </delete>
+
+    <select id="findAll" resultType="com.example.edu.entity.Teacher">
+        select * from teacher
+    </select>
+
     <update id="modifyUserInfo" parameterType="com.example.edu.entity.Teacher">
         update teacher set name=#{name}, password=#{password}, sex=#{sex}, avatar=#{avatar} where id=#{id}
     </update>

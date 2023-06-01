@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-  <%@ page import="com.example.edu.entity.Professional"%>
-  <%@ page import="java.util.List" %>
-  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%--
     Created by IntelliJ IDEA.
     User: MI
@@ -11,7 +10,7 @@
     Time: 13:42
     To change this template use File | Settings | File Templates.
   --%>
-  <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -37,7 +36,7 @@
     <link rel="stylesheet" id="css-app" href="${pageContext.request.contextPath}/assets/css/app.css" />
     <link rel="stylesheet" id="css-app-custom" href="${pageContext.request.contextPath}/assets/css/app-custom.css" />
     <!-- End Stylesheets -->
-  </head>
+</head>
 <body>
 
 <div class="row">
@@ -134,41 +133,6 @@
 <script src="${pageContext.request.contextPath}/assets/js/core/jquery.placeholder.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/app-custom.js"></script>
-</body>
-</html>
-
-<script type="text/javascript">
-  $(function (){
-    $('#cancel').click(function (){
-      $('input').attr('value',"")
-    })
-    $('button[name=edit]').click(function (){
-      $('#modal-normal').modal('show');
-      $.ajax({
-        url : '${pageContext.request.contextPath}/professional/findProfessionalById?id=' + $(this).attr('id'),
-        dataType : "json",
-        success : function (data){
-          //将后台数据传入input name
-          $('#modal-normal input[name=name]').val(data.name)
-          $('#modal-normal input[name=id]').val(data.id)
-
-
-          $('modal-normal').modal("show")
-        },
-        error : function (error){
-          console.log('错误信息：' + error.responseText)
-        }
-      })
-    })
-
-    $('button[name=del]').click(function (){
-      if (confirm('您确定要删除吗？')){
-        location.href = '/professional/delete?id=' + $(this).attr('id')
-      }
-    })
-  })
-
-</script>
 
 </body>
 </html>

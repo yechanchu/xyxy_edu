@@ -46,7 +46,7 @@ public class LogAdvice {
                 args) {
             joiner.add(arg.toString());
         }
-        log.setDescription("方法：" + method + ",参数：" + joiner);
+        log.setDescription("方法：" + method);
         log.setCreate_time(Util.getCurrentTime());
         service.save(log);
     }
