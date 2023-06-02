@@ -4,12 +4,26 @@
 
 <mapper namespace="com.example.edu.mapper.TeacherMapper">
 
+    <select id="findTeacherById" parameterType="java.lang.String" resultType="com.example.edu.entity.Teacher">
+        select *
+        from teacher
+        where id = #{id};
+    </select>
+
+    <insert id="add" parameterType="com.example.edu.entity.Teacher">
+        insert into teacher values (#{id}, #{name}, #{account}, #{password}, #{sex}, #{avatar})
+    </insert>
+
     <delete id="del" parameterType="java.lang.String">
         delete from teacher where id=#{id}
     </delete>
 
     <select id="findAll" resultType="com.example.edu.entity.Teacher">
         select * from teacher
+    </select>
+    
+    <select id="modifyExceptAvatar" parameterType="com.example.edu.entity.Teacher">
+        update teacher set name=#{name}, password=#{password}, sex=#{sex} where id=#{id}
     </select>
 
     <update id="modifyUserInfo" parameterType="com.example.edu.entity.Teacher">

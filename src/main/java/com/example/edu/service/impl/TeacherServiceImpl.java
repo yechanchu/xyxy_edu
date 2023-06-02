@@ -17,6 +17,16 @@ public class TeacherServiceImpl implements TeacherService {
     private TeacherMapper mapper;
 
     @Override
+    public Teacher findTeacherById(String id) {
+        return mapper.findTeacherById(id);
+    }
+
+    @Override
+    public void add(Teacher teacher) {
+        mapper.add(teacher);
+    }
+
+    @Override
     public void del(String id) {
         mapper.del(id);
     }
@@ -30,6 +40,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Integer modifyUserInfo(Teacher teacher) {
+        if (teacher.getAvatar() == null) {
+            return mapper.modifyExceptAvatar(teacher);
+        }
         return mapper.modifyUserInfo(teacher);
     }
 

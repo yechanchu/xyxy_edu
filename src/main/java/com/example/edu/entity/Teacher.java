@@ -3,7 +3,7 @@ package com.example.edu.entity;
 import lombok.Data;
 
 @Data
-public class Teacher  {
+public class Teacher {
 
     private String id;
     private String name;

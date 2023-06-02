@@ -59,11 +59,13 @@
                         <tr>
                             <td class="text-center">${c.index + 1}</td>
                             <td class="text-center">${t.name}</td>
-                            <td class="text-center">${t.avatar}</td>
+                            <td class="text-center">
+                                <img class="img-avatar img-avatar-48" src="${pageContext.request.contextPath}${t.avatar}" alt="User profile pic" />
+                            </td>
                             <td class="text-center">${t.account}</td>
                             <td class="text-center">${t.sex==1?'男':'女'}</td>
                             <td class="text-center">
-                                <button class="btn btn-xs btn-info" type="button" name="edit" id="${t.id}">编辑</button>
+                                <button class="btn btn-xs btn-info" type="button" name="edit" id="${t.id}" >编辑</button>
                                 <button class="btn btn-xs btn-danger" type="button" name="del" id="${t.id}">删除</button>
                             </td>
                         </tr>
@@ -110,6 +112,61 @@
     </div>
 </div>
 
+<!-- Normal Modal -->
+<div class="modal" id="modal-normal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="card-block">
+                <form class="form-horizontal" action="${pageContext.request.contextPath}/teacher/add" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" id="id" value="${user.id}"/>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="account">账号 <span class="text-orange">*</span></label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="text" id="account" name="account" placeholder="请输入账号..." value="${user.account}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="name">用户名 <span class="text-orange">*</span></label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="text" id="name" name="name" placeholder="请输入用户名..." value="${user.name}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="password">密码 <span class="text-orange">*</span></label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="password" id="password" name="password" placeholder="请输入密码.." value="${user.password}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="sex">性别 <span class="text-orange">*</span></label>
+                        <div class="col-md-7">
+                            <select class="form-control" id="sex" name="sex">
+                                <option value="" id="default">请选择</option>
+                                <option value="1" ${user.sex=='1'?'selected':''}>男</option>
+                                <option value="0" ${user.sex=='0'?'selected':''}>女</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="img">头像 <span class="text-orange">*</span></label>
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <input type="file" id="img" name="multipartFile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-app" type="submit"><i class="ion-checkmark"></i> 确认</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Normal Modal -->
+
 <!-- AppUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock and App.js -->
 <script src="${pageContext.request.contextPath}/assets/js/core/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/core/bootstrap.min.js"></script>
@@ -126,6 +183,26 @@
         if (confirm('确认删除？')){
             location.href='${pageContext.request.contextPath}/teacher/del?id=' + $(this).attr('id')
         }
+    })
+
+    $('#add').click(function (){
+        $('input').val('')
+        $('#default').attr('selected', 'selected')
+    })
+
+    $('button[name=edit]').click(function (){
+        $.ajax({
+            url : '${pageContext.request.contextPath}/teacher/findTeacherById?id=' + $(this).attr('id'),
+            dataType: 'json',
+            success(data) {
+                $('#id').val(data.id)
+                $('#name').val(data.name)
+                $('#account').val(data.account)
+                $('#password').val(data.password)
+                $('#sex').val(data.sex)
+            },
+        })
+        $('#modal-normal').modal('show')
     })
 </script>
 
