@@ -84,7 +84,7 @@
                             <ul class="nav nav-subnav">
 
                                 <li>
-                                    <a href="base_forms_elements.html">Elements</a>
+                                    <a href="${pageContext.request.contextPath}/student/listPage" target="main">学生信息</a>
                                 </li>
 
                                 <li>

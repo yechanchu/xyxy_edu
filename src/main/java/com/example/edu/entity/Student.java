@@ -9,7 +9,7 @@ public class Student{
     private String name;
     private String account;
     private String password;
-
+    private Professional professional;
     private String sex;
     private String avatar;
 

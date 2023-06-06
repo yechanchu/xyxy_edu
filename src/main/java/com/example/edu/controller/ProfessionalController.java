@@ -46,6 +46,12 @@ public class ProfessionalController {
         return update(professional, request);
     }
 
+    @RequestMapping("/listForStudent")
+    @ResponseBody
+    public List<Professional> listForStudent(HttpServletRequest request){
+        return service.findAll();
+    }
+
     @RequestMapping("list")
     public String list(HttpServletRequest request){
         List<Professional> list = service.findAll();

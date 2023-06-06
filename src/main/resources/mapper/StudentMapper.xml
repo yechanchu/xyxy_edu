@@ -3,9 +3,51 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.edu.mapper.StudentMapper">
+	
+
+	<resultMap id="studentMap" type="com.example.edu.entity.Student">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="account" column="account"/>
+		<result property="password" column="password"/>
+		<result property="sex" column="sex"/>
+		<result property="avatar" column="avatar"/>
+		<association property="professional" column="professional_id">
+			<id property="id" column="pid"/>
+			<result property="name" column="pname"/>
+		</association>
+	</resultMap>
+
+	<resultMap id="studentById" type="com.example.edu.entity.Student">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="account" column="account"/>
+		<result property="password" column="password"/>
+		<result property="sex" column="sex"/>
+		<result property="avatar" column="avatar"/>
+		<result property="professional.id" column="professional_id"/>
+	</resultMap>
+
+	<select id="findStudentById" parameterType="java.lang.String" resultMap="studentById">
+		select id, name, account, password, sex, professional_id, avatar from student where id=#{id}
+	</select>
+
+	<delete id="delete" parameterType="java.lang.String">
+		delete
+		from student
+		where id=#{id};
+	</delete>
+
+	<insert id="add" parameterType="com.example.edu.entity.Student">
+		insert into student(id, name, account, password, professional_id, sex, avatar) values (#{id}, #{name}, #{account}, #{password}, #{professional.id}, #{sex}, #{avatar})
+	</insert>
+
+	<select id="findAll" resultMap="studentMap">
+		select s.id, s.name, s.account, s.password, s.sex, s.avatar, p.id pid, p.name pname from student s left join professional p on s.professional_id=p.id
+	</select>
 
 	<update id="modifyUserInfo" parameterType="com.example.edu.entity.Student">
-		update student set name=#{name}, password=#{password}, sex=#{sex}, profession_id=#{profession_id}, avatar=#{avatar} where id=#{id}
+		update student set name=#{name}, password=#{password}, sex=#{sex}, professional_id=#{professional.id}, avatar=#{avatar} where id=#{id}
 	</update>
 
 	<select id="findStudentByAccountAndPassword" parameterType="java.lang.String" resultType="com.example.edu.entity.Student">
